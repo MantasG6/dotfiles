@@ -1,0 +1,10 @@
+font=Atkinson Hyperlegible 10
+background-color=#000000cc
+text-color=#ffffffff
+margin=5
+outer-margin=20
+border-size=1
+padding=10
+border-color=#e60000e6
+text-alignment=center
+default-timeout=30000
