@@ -1,0 +1,148 @@
+@import url('colors.css');
+
+* {
+    font-size:14px;
+    font-family: "Atkinson Hyperlegible";
+}
+
+window#waybar {
+    all: unset;
+}
+
+button {
+    /* Use box-shadow instead of border so the text isn't offset */
+    box-shadow: inset 0 -3px transparent;
+    /* Avoid rounded borders under each button name */
+    border: none;
+    border-radius: 0;
+}
+
+/* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
+button:hover {
+    background: inherit;
+    box-shadow: inset 0 -3px #ffffff;
+}
+
+#window,
+#workspaces {
+    margin: 3px 0;
+}
+
+/* Modules Left styling */
+.modules-left {
+    margin-left: 3px;
+}
+
+#custom-archicon {
+    color: @color2;
+    margin-right: 6px;
+    background: @color1;
+    border: 1px solid;
+    padding: 0 3px 0 5px;
+    border-radius: 3px;
+}
+#custom-archicon:hover {
+    color: @color1;
+    background: @color2;
+}
+
+#workspaces button {
+    all:unset;
+    background: @color1;
+    padding: 2px 8px;
+    margin: 0 2px;
+    color: @color2;
+    font-weight: bold;
+    border-radius: 3px;
+}
+#workspaces button.active {
+    background: @color2;
+    color: @color1;
+    border: 1px solid;
+}
+
+#cpu,
+#memory,
+#temperature {
+    padding: 0 10px;
+    color: @color2;
+    background: @color1;
+    font-weight: bold;
+    margin: 3px 0;
+}
+#cpu {
+    margin-left: 50px;
+    border-radius: 3px 0 0 3px;
+}
+#memory {
+}
+#temperature {
+    border-radius: 0 3px 3px 0;
+}
+#temperature.critical {
+    background-color: @color2;
+    color: @color1;
+    border-radius: 3px;
+}
+#cpu:hover,
+#memory:hover,
+#temperature:hover {
+    background-color: @color2;
+    color: @color1;
+    border-radius: 3px;
+}
+
+/* Modules Right (and center) styling */
+#clock,
+.modules-right {
+    margin: 3px;
+    border-radius: 3px;
+    background: @color1;
+    color: @color2;
+    font-weight: bold;
+}
+
+#clock,
+#battery,
+#backlight,
+#network,
+#pulseaudio,
+#language,
+#wireplumber,
+#bluetooth {
+    padding: 0 10px;
+}
+
+#clock {
+    min-width: 130px;
+}
+#language {
+    min-width: 20px;
+}
+
+#clock:hover,
+#pulseaudio:hover,
+#language:hover,
+#network:hover,
+#bluetooth:hover,
+#backlight:hover,
+#battery:hover {
+    background-color: @color2;
+    color: @color1;
+    border-radius: 3px;
+}
+
+@keyframes blink {
+    to {
+        color: @color1;
+    }
+}
+
+/* Using steps() instead of linear as a timing function to limit cpu usage */
+#battery.critical:not(.charging) {
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: steps(12);
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}

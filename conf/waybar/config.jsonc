@@ -1,0 +1,121 @@
+// -*- mode: jsonc -*-
+{
+    // "layer": "top", // Waybar at top layer
+    // "position": "bottom", // Waybar position (top|bottom|left|right)
+    "height": 32, // Waybar height (to be removed for auto height)
+    // "width": 1280, // Waybar width
+    // "spacing": 4, // Gaps between modules (4px)
+    // Choose the order of the modules
+    "modules-left": [
+	"custom/archicon",
+        "hyprland/workspaces",
+        "cpu",
+        "memory",
+        "temperature"
+    ],
+    "modules-center": [
+        "clock"
+    ],
+    "modules-right": [
+	"hyprland/language",
+        "pulseaudio",
+        "network",
+	"bluetooth",
+        "backlight",
+        "battery"
+    ],
+    // Left modules
+    "custom/archicon": {
+	    "format": " ",
+	    "tooltip": false,
+	    "on-click": "$TERMINAL bash -c \"fastfetch; exec bash\""
+    },
+    "hyprland/workspaces": {
+	    "format": "{name}",
+	    "persistent-workspaces": {
+		    "*": [ 1,2,3,4,5,6 ]
+	    }
+    },
+    "cpu": {
+        "format": "{usage}% ",
+        "tooltip": false,
+	"on-click": "$TERMINAL $SYS_MON"
+    },
+    "memory": {
+        "format": "{}% ",
+	"on-click": "$TERMINAL $SYS_MON"
+    },
+    "temperature": {
+        "critical-threshold": 80,
+        "format": "{temperatureC}°C {icon}",
+        "format-icons": ["", "", "", "", ""],
+	"on-click": "$TERMINAL $SYS_MON"
+    },
+    // Center modules
+    "clock": {
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "format": "{:%Y-%m-%d  |  %H:%M}",
+	"calendar": {
+	    "format": {
+	        "today": "<span color='#ba181b'><b><u>{}</u></b></span>"
+	    }
+	},
+	"on-click": "$BROWSER calendar.google.com && hyprctl dispatch focuswindow \"class:^($BROWSER)$\""
+    },
+    // Right modules
+    "hyprland/language": {
+	"format": "{shortDescription}",
+	"on-click": "hyprctl switchxkblayout at-translated-set-2-keyboard next",
+	"tooltip-format": "{shortDescription}: {long}"
+    },
+    "pulseaudio": {
+        // "scroll-step": 1, // %, can be a float
+        "format": "{volume}% {icon}",
+        "format-muted": " ",
+        "format-source": "{volume}% ",
+        "format-source-muted": "",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+	    "default": [" ⣀⣄⣀⣀⣀⣀⣀", " ⣀⣄⣤⣦⣀⣀⣀", " ⣀⣄⣤⣦⣶⣀⣀", " ⣀⣄⣤⣦⣶⣷⣀", " ⣀⣄⣤⣦⣶⣷⣿"]
+        },
+        "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+	"on-click-right": "pavucontrol && hyprctl dispatch focuswindow \"class:^(pavucontrol)$\""
+    },
+    "network": {
+        "format-wifi": "󰖩  {signalStrength}%",
+        "format-ethernet": "{ipaddr}/{cidr} ",
+        "tooltip-format": "{essid}",
+        "format-linked": "{ifname} (No IP) ",
+        "format-disconnected": " 󰖪  ",
+	"on-click": "$TERMINAL impala"
+    },
+    "bluetooth": {
+	"format": " {status}",
+	"format-disabled": "", // an empty format will hide the module
+	"tooltip-format": "{controller_alias}\t{controller_address}",
+	"tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
+	"tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+	"tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%",
+	"on-click": "$TERMINAL bluetui"
+    },
+    "backlight": {
+        // "device": "acpi_video1",
+        "format": "{percent}% {icon}",
+        "format-icons": ["󱩎", "󱩏", "󱩐", "󱩑", "󱩒", "󱩓", "󱩔", "󱩕", "󱩖", "󰛨"]
+    },
+    "battery": {
+        "states": {
+            // "good": 95,
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{capacity}% {icon}",
+        "format-full": "{capacity}% {icon}",
+        "format-icons": ["󱊡","󱊢","󱊣"]
+    }
+}
