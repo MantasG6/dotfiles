@@ -1,0 +1,2 @@
+- install uBlock Origin (Firefox extension)
+- import the configuration using the .txt file
