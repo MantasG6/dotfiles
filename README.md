@@ -12,12 +12,10 @@ Before installing be sure to download new ISO and mount it. Arch Linux keys are 
 - Profile: minimal
 - Applications: Bluetooth: Enabled; Audio: pipewire
 - Kernels: linux-zen only
-- Network configuration: use NetworkManager
+- Network configuration: don't use Network Manager, set up the same as iso (install)
 - NTP Enabled
 
-# Move files to appropriate locations
-- faillock.conf goes to /etc/security/faillock.conf
-- greetd/config.toml goes to /etc/greetd/config.toml
-- wallpapers go to ~/Pictures/wallpapers
+# fix Spotify
+edit /etc/spotify-launcher.conf
 
 # Use initial_setup_arch.sh to do the rest
