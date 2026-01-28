@@ -41,6 +41,7 @@ sudo pacman -S --needed --noconfirm hyprlock
 sudo pacman -S --needed --noconfirm spotify-launcher
 sudo pacman -S --needed --noconfirm gimp
 sudo pacman -S --needed --noconfirm hyprsunset
+sudo pacman -S --needed --noconfirm firefox
 paru -S --needed --noconfirm google-chrome
 sudo pacman -S --needed --noconfirm zip unzip
 sudo pacman -S --needed --noconfirm waybar
@@ -56,8 +57,12 @@ sudo cp -r ./conf/greetd /etc/
 cp -r ./conf/wofi ~/.config/
 cp -r ./wallpapers ~/Pictures/
 mkdir ~/.local/share/icons 
-cp -r ./Red-C ~/.local/share/icons/ # set cursor with nwg-look
+cp -r ./Red-C ~/.local/share/icons/
 cp -r ./conf/waybar ~/.config/
 cp -r ./conf/hypr ~/.config/
 cp -r ./conf/fastfetch ~/.config/
 sudo cp ./conf/faillock.conf /etc/security/
+cp -r ./conf/nwg-look ~/.local/share/
+cp -r ./conf/qt5ct ~/.config/
+cp -r ./conf/qt6ct ~/.config/
+cp -r ./conf/procps ~/.config/
