@@ -30,7 +30,7 @@ sudo pacman -S --needed --noconfirm greetd
 paru -S --needed --noconfirm hyprpolkitagent
 sudo pacman -S --needed --noconfirm brightnessctl
 sudo pacman -S --needed --noconfirm playerctl
-echo "alias ll='ls -la'" | sudo tee -a ~/.bashrc
+echo "alias ll='ls -laF'" | sudo tee -a ~/.bashrc
 sudo pacman -S --needed --noconfirm greetd-tuigreet
 sudo systemctl enable greetd.service
 sudo pacman -S --needed --noconfirm wofi
@@ -51,6 +51,7 @@ sudo pacman -S --needed --noconfirm pavucontrol
 sudo pacman -S --needed --noconfirm bluetui
 sudo pacman -S --needed --noconfirm impala
 sudo pacman -S --needed --noconfirm fastfetch
+sudo pacman -S --needed --noconfirm openssh
 # Copy over the configurations
 cp -r ./conf/mako ~/.config/
 sudo cp -r ./conf/greetd /etc/
