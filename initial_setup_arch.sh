@@ -52,6 +52,10 @@ sudo pacman -S --needed --noconfirm bluetui
 sudo pacman -S --needed --noconfirm impala
 sudo pacman -S --needed --noconfirm fastfetch
 sudo pacman -S --needed --noconfirm openssh
+sudo pacman -S --needed --noconfirm usbutils
+# Uncomment if you use fingerprint
+#sudo pacman -S --needed --noconfirm fprintd
+#paru -S --needed --noconfirm pam-fprint-grosshack
 # Copy over the configurations
 cp -r ./conf/mako ~/.config/
 sudo cp -r ./conf/greetd /etc/
@@ -67,3 +71,12 @@ cp -r ./conf/nwg-look ~/.local/share/
 cp -r ./conf/qt5ct ~/.config/
 cp -r ./conf/qt6ct ~/.config/
 cp -r ./conf/procps ~/.config/
+# Fingerprint configurations. Uncomment if you use fingerprint
+#sudo cp ./conf/50-net.reactivated.fprint.device.enroll.rules /etc/polkit-1/rules.d/
+#sudo cp ./conf/fprint/system-local-login /etc/pam.d/
+#sudo cp ./conf/fprint/greetd /etc/pam.d/
+#sudo cp ./conf/fprint/hyprlock /etc/pam.d/
+#sudo cp ./conf/fprint/system-login /etc/pam.d/
+#sudo cp ./conf/fprint/sudo /etc/pam.d/
+#sudo cp ./conf/fprint/su /etc/pam.d/
+#sudo cp ./conf/fprint/system-auth /etc/pam.d/
