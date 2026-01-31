@@ -1,0 +1,1 @@
+SUBSYSTEM=="power_supply", ATTR{type}=="Mains", TAG+="systemd", ENV{SYSTEMD_WANTS}+="bt-fast-conn.service"

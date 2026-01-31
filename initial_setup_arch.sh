@@ -53,6 +53,14 @@ sudo pacman -S --needed --noconfirm impala
 sudo pacman -S --needed --noconfirm fastfetch
 sudo pacman -S --needed --noconfirm openssh
 sudo pacman -S --needed --noconfirm usbutils
+sudo pacman -S --needed --noconfirm bluez-utils
+# Make bluetooth fast when charging
+sudo cp ./conf/bt-fast-conn/toggle_bt_fast_connect.sh /usr/local/bin/
+sudo chmod 775 /usr/local/bin/toggle_bt_fast_connect.sh
+sudo cp ./conf/bt-fast-conn/99-bt-power.rules /etc/udev/rules.d/
+sudo cp ./conf/bt-fast-conn/bt-fast-conn.service /etc/systemd/system/bt-fast-conn.service
+sudo udevadm control --reload
+sudo systemctl daemon-reload
 # Uncomment if you use fingerprint
 #sudo pacman -S --needed --noconfirm fprintd
 #paru -S --needed --noconfirm pam-fprint-grosshack
@@ -72,11 +80,7 @@ cp -r ./conf/qt5ct ~/.config/
 cp -r ./conf/qt6ct ~/.config/
 cp -r ./conf/procps ~/.config/
 # Fingerprint configurations. Uncomment if you use fingerprint
-#sudo cp ./conf/50-net.reactivated.fprint.device.enroll.rules /etc/polkit-1/rules.d/
-#sudo cp ./conf/fprint/system-local-login /etc/pam.d/
-#sudo cp ./conf/fprint/greetd /etc/pam.d/
+#sudo cp ./conf/fprint/50-net.reactivated.fprint.device.enroll.rules /etc/polkit-1/rules.d/
 #sudo cp ./conf/fprint/hyprlock /etc/pam.d/
-#sudo cp ./conf/fprint/system-login /etc/pam.d/
 #sudo cp ./conf/fprint/sudo /etc/pam.d/
 #sudo cp ./conf/fprint/su /etc/pam.d/
-#sudo cp ./conf/fprint/system-auth /etc/pam.d/

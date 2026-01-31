@@ -1,0 +1,13 @@
+[Unit]
+Description=Toggle Bluetooth fast-conn based on AC power
+After=bluetooth.service
+Requires=bluetooth.service
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/bin/toggle_bt_fast_connect.sh
+StandardInput=null
+TimeoutStartSec=5
+
+[Install]
+WantedBy=multi-user.target
