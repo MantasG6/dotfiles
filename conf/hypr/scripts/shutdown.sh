@@ -4,6 +4,14 @@ case "$confirmation" in
 	[yY]|[yY][eE][sS])
 		echo "Shutdown confirmed" && shutdown now
 		;;
+	[hH])
+		echo "Hibernate! Progress will be saved" && systemctl hibernate
+		;;
+	[rR])
+		echo "Rebooting" && reboot
+		;;
+	[sS]) 	echo "Suspending" && systemctl suspend
+		;;
 	*)
 		echo "Shutdown declined"
 		;;
