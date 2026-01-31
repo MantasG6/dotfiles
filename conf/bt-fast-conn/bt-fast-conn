@@ -1,0 +1,6 @@
+#!/bin/sh
+case "$1" in
+  post)
+    /usr/local/bin/toggle_bt_fast_connect.sh
+    ;;
+esac

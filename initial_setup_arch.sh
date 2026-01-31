@@ -59,6 +59,12 @@ sudo cp ./conf/bt-fast-conn/toggle_bt_fast_connect.sh /usr/local/bin/
 sudo chmod 775 /usr/local/bin/toggle_bt_fast_connect.sh
 sudo cp ./conf/bt-fast-conn/99-bt-power.rules /etc/udev/rules.d/
 sudo cp ./conf/bt-fast-conn/bt-fast-conn.service /etc/systemd/system/bt-fast-conn.service
+sudo cp ./conf/bt-fast-conn/bt-fast-conn /usr/lib/systemd/system-sleep/bt-fast-conn
+sudo chmod 775 /usr/lib/systemd/system-sleep/bt-fast-conn
+sudo chown root:root /etc/udev/rules.d/99-bt-power.rules
+sudo chown root:root /etc/systemd/system/bt-fast-conn.service
+sudo chown root:root /usr/lib/systemd/system-sleep/bt-fast-conn
+sudo chown root:root /usr/local/bin/toggle_bt_fast_connect.sh
 sudo udevadm control --reload
 sudo systemctl daemon-reload
 # Uncomment if you use fingerprint
