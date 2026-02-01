@@ -54,6 +54,7 @@ button:hover {
     color: @color2;
     font-weight: bold;
     border-radius: 3px;
+    min-width: 10px;
 }
 #workspaces button.active {
     background: @color2;
@@ -69,6 +70,7 @@ button:hover {
     background: @color1;
     font-weight: bold;
     margin: 3px 0;
+    min-width: 55px;
 }
 #cpu {
     margin-left: 50px;
@@ -108,16 +110,26 @@ button:hover {
 #network,
 #pulseaudio,
 #language,
-#wireplumber,
 #bluetooth {
     padding: 0 10px;
 }
 
 #clock {
-    min-width: 130px;
+    min-width: 140px;
 }
 #language {
     min-width: 20px;
+}
+#pulseaudio {
+    min-width: 115px;
+}
+#bluetooth {
+    min-width: 80px;
+}
+#network,
+#backlight,
+#battery {
+    min-width: 55px;
 }
 
 #clock:hover,
