@@ -54,6 +54,7 @@ sudo pacman -S --needed --noconfirm fastfetch
 sudo pacman -S --needed --noconfirm openssh
 sudo pacman -S --needed --noconfirm usbutils
 sudo pacman -S --needed --noconfirm bluez-utils
+sudo pacman -S --needed --noconfirm bat
 # Copy over the configurations
 cp -r ./conf/mako ~/.config/
 sudo cp -r ./conf/greetd /etc/
