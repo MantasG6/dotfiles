@@ -17,7 +17,7 @@ sudo pacman -S --needed --noconfirm linux-zen-headers
 # Uncomment if using Nvidia
 # sudo pacman -S --needed --noconfirm nvidia-dkms
 # echo -e "options nvidia_drm modeset=1" | sudo tee -a /etc/modprobe.d/nvidia.conf
-sudo pacman -S --needed --noconfirm noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra ttf-atkinson-hyperlegible ttf-firacode-nerd
+sudo pacman -S --needed --noconfirm noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra ttf-atkinson-hyperlegible ttf-firacode-nerd ttf-jetbrains-mono-nerd
 sudo pacman -S --needed --noconfirm mako
 mkdir -p ~/.local/share/dbus-1/services
 echo -e "[D-BUS Service]\nName=org.freedesktop.Notifications\nExec=/usr/bin/mako" | sudo tee -a ~/.local/share/dbus-1/services/org.freedesktop.Notifications.service
