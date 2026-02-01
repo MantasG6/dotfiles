@@ -84,7 +84,8 @@
 	    "default": [" ⣀⣄⣀⣀⣀⣀⣀", " ⣀⣄⣤⣦⣀⣀⣀", " ⣀⣄⣤⣦⣶⣀⣀", " ⣀⣄⣤⣦⣶⣷⣀", " ⣀⣄⣤⣦⣶⣷⣿"]
         },
         "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
-	"on-click-right": "pavucontrol && hyprctl dispatch focuswindow \"class:^(pavucontrol)$\""
+	"on-click-right": "pavucontrol && hyprctl dispatch focuswindow \"class:^(pavucontrol)$\"",
+	"max-volume": 150
     },
     "network": {
         "format-wifi": "󰖩  {signalStrength}%",

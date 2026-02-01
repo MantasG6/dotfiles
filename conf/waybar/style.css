@@ -2,7 +2,7 @@
 
 * {
     font-size:14px;
-    font-family: "Atkinson Hyperlegible";
+    font-family: "JetBrainsMono Nerd Font";
 }
 
 window#waybar {
@@ -59,7 +59,6 @@ button:hover {
 #workspaces button.active {
     background: @color2;
     color: @color1;
-    border: 1px solid;
 }
 
 #cpu,
