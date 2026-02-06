@@ -43,6 +43,11 @@ sudo pacman -S --needed --noconfirm gimp
 sudo pacman -S --needed --noconfirm hyprsunset
 sudo pacman -S --needed --noconfirm firefox
 paru -S --needed --noconfirm google-chrome
+# Set Firefox as the default for http and https
+xdg-mime default firefox.desktop x-scheme-handler/http
+xdg-mime default firefox.desktop x-scheme-handler/https
+# Also set it for HTML files (optional but recommended)
+xdg-mime default firefox.desktop text/html
 sudo pacman -S --needed --noconfirm zip unzip
 sudo pacman -S --needed --noconfirm waybar
 sudo pacman -S --needed --noconfirm otf-font-awesome
@@ -55,6 +60,10 @@ sudo pacman -S --needed --noconfirm openssh
 sudo pacman -S --needed --noconfirm usbutils
 sudo pacman -S --needed --noconfirm bluez-utils
 sudo pacman -S --needed --noconfirm bat
+sudo pacman -S --needed --noconfirm zsh
+chsh -s $(which zsh)
+curl -s https://ohmyposh.dev/install.sh | bash -s
+sudo pacman -S --needed --noconfirm stow
 # Copy over the configurations
 cp -r ./conf/mako ~/.config/
 sudo cp -r ./conf/greetd /etc/
