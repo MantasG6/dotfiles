@@ -1,0 +1,93 @@
+{
+  "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "shell_integration": true,
+  "enable_cursor_positioning": true,
+  "upgrade": {
+    "source": "github",
+    "interval": "168h",
+    "auto": false,
+    "notice": true
+  },
+  "blocks": [
+    {
+      "type": "prompt",
+      "alignment": "left",
+      "segments": [
+        {
+          "type": "os",
+          "style": "plain",
+          "foreground": "#ba181b",
+          "template": "{{ if .WSL }}WSL at {{ end }}{{.Icon}} "
+        },
+        {
+          "options": {
+            "folder_separator_icon": "/",
+            "style": "mixed"
+          },
+          "template": "{{ .Path }} ",
+          "foreground": "#ba181b",
+          "type": "path",
+          "style": "plain"
+        },
+        {
+          "options": {
+            "fetch_upstream_icon": true,
+	    "branch_icon": "\udb81\ude2c "
+          },
+          "template": "{{ .UpstreamIcon }} {{ .HEAD }} ",
+          "foreground": "#f5f3f4",
+          "powerline_symbol": "\ue0b0",
+          "type": "git",
+          "style": "plain"
+        }
+      ]
+    },
+    {
+      "type": "prompt",
+      "alignment": "right",
+      "segments": [
+	{
+	  "type": "executiontime",
+	  "style": "diamond",
+	  "leading_diamond": "",
+	  "trailing_diamond": "",
+	  "powerline_symbol": "",
+	  "foreground": "#161a1d",
+	  "background": "#ba181b",
+	  "template": " <#151a1d></> {{ .FormattedMs }} ",
+	  "options": {
+	    "threshold": 500,
+	    "style": "austin",
+	    "always_enabled": true
+	  }
+	}
+      ]
+    },
+    {
+      "type": "prompt",
+      "alignment": "left",
+      "segments": [
+        {
+          "template": "\ue3bf ",
+          "foreground": "#cd5e42",
+          "type": "root",
+          "style": "plain"
+        },
+        {
+          "template": "\uf105 ",
+          "foreground": "#ba181b",
+          "type": "text",
+          "style": "plain"
+        }
+      ],
+      "newline": true
+    }
+  ],
+  "transient_prompt": {
+    "template": "\uf105 ",
+    "foreground": "#ba181b",
+    "type": "text",
+    "style": "plain"
+  },
+  "version": 4
+}
