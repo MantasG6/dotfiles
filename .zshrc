@@ -15,15 +15,17 @@ source ${ZIM_HOME}/init.zsh
 HISTFILE=~/.zsh_history
 HISTSIZE=100000
 SAVEHIST=100000
-HISTDUP=erase
 unsetopt beep
-setopt appendhistory
-setopt sharehistory
-setopt hist_ignore_space
-setopt hist_ignore_all_dups
-setopt hist_save_no_dups
-setopt hist_ignore_dups
-setopt hist_find_no_dups
+
+setopt HIST_IGNORE_ALL_DUPS  # Delete old recorded entry if new entry is a duplicate
+setopt HIST_REDUCE_BLANKS    # Remove superfluous blanks
+setopt HIST_IGNORE_SPACE     # Don't record commands starting with a space
+setopt HIST_FIND_NO_DUPS     # Don't find duplicates
+
+# Sharing and Saving:
+setopt SHARE_HISTORY          # Share history between sessions
+setopt INC_APPEND_HISTORY     # Write to the history file immediately, not when the shell exits
+setopt HIST_EXPIRE_DUPS_FIRST # Expire duplicate entries first when trimming history
 
 
 alias ls='ls --color=auto'
