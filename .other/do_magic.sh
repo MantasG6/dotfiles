@@ -30,7 +30,6 @@ sudo pacman -S --needed --noconfirm greetd
 paru -S --needed --noconfirm hyprpolkitagent
 sudo pacman -S --needed --noconfirm brightnessctl
 sudo pacman -S --needed --noconfirm playerctl
-echo "alias ll='ls -laF'" | sudo tee -a ~/.bashrc
 sudo pacman -S --needed --noconfirm greetd-tuigreet
 sudo systemctl enable greetd.service
 sudo pacman -S --needed --noconfirm wofi
@@ -64,6 +63,7 @@ sudo pacman -S --needed --noconfirm zsh
 chsh -s $(which zsh)
 curl -s https://ohmyposh.dev/install.sh | bash -s
 sudo pacman -S --needed --noconfirm stow
+sudo pacman -S --needed --noconfirm ripgrep
 # Copy over the configurations
 cp -r ./conf/mako ~/.config/
 sudo cp -r ./conf/greetd /etc/

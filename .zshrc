@@ -38,3 +38,6 @@ ZSH_HIGHLIGHT_STYLES[builtin]='fg=white,bold'
 ZSH_HIGHLIGHT_STYLES[function]='fg=white,bold'
 ZSH_HIGHLIGHT_STYLES[precommand]='fg=white,bold'
 ZSH_HIGHLIGHT_STYLES[hashed-command]='fg=white,bold'
+
+# Make hidden files count as "matches" so the list isn't empty
+_comp_options+=(globdots)
