@@ -17,12 +17,17 @@ return {
                 {
                     "<leader>tf",
                     function() neotest.run.run(vim.fn.expand("%")) end,
-                    desc = "Run tests in the current file"
+                    desc = "Run all tests in the current file"
                 },
                 {
                     "<leader>to",
                     function() neotest.output_panel.toggle() end,
-                    desc = "Run the nearest test"
+                    desc = "Toggle test output panel"
+                },
+                {
+                    "<leader>ts",
+                    function() neotest.summary.toggle() end,
+                    desc = "Toggle test summary"
                 },
             }
             return keys
