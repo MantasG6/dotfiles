@@ -84,6 +84,7 @@ sudo pacman -S --needed --noconfirm docker docker-compose
 sudo ln -sf /usr/bin/iptables-legacy /usr/local/bin/iptables
 sudo ln -sf /usr/bin/ip6tables-legacy /usr/local/bin/ip6tables
 sudo pacman -S --needed --noconfirm openvpn
+sudo pacman -S --needed --noconfirm postgresql
 # follow https://wiki.archlinux.org/title/ProtonVPN to finish installing ProtonVPN
 sudo pacman -S --needed --noconfirm rsync # cp with progress
 paru -S --needed --noconfirm jmtpfs # to connect android phone through USB
