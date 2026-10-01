@@ -39,7 +39,7 @@ local menu     = "wofi --show drun"
 local browser  = "firefox"
 local lock     = "loginctl lock-session"
 local music    = "spotify"
-local shutdown = terminal .. "-e ~/.config/hypr/scripts/shutdown.sh"
+local shutdown = terminal .. " -e ~/.config/hypr/scripts/shutdown.sh"
 
 
 -------------------
@@ -240,7 +240,7 @@ hl.bind(mainMod .. " + C", hl.dsp.window.close())
 hl.bind(mainMod .. " + CTRL + DELETE", hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch 'hl.dsp.exit()'"))
 hl.bind(mainMod .. " + DELETE", hl.dsp.exec_cmd(lock))
 hl.bind(mainMod .. " + SPACE", hl.dsp.exec_cmd(menu))
-hl.bind(mainMod .. " + ALT + F4", hl.dsp.exec_cmd(shutdown))
+hl.bind("ALT + F4", hl.dsp.exec_cmd(shutdown))
 hl.bind("PRINT", hl.dsp.exec_cmd("grim -g \"$(slurp)\" - | swappy -f -"))
 
 -- Move focus with mainMod + arrow keys
