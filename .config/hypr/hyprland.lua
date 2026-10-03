@@ -258,8 +258,8 @@ for i = 1, 10 do
 end
 
 -- Move active workspace to another screen
-hl.bind(mainMod .. " + SHIFT + l", hl.dsp.window.move({ monitor = "+1", follow = true }))
-hl.bind(mainMod .. " + SHIFT + h", hl.dsp.window.move({ monitor = "-1", follow = true }))
+hl.bind(mainMod .. " + SHIFT + l", hl.dsp.workspace.move({ monitor = "+1"}))
+hl.bind(mainMod .. " + SHIFT + h", hl.dsp.workspace.move({ monitor = "-1"}))
 
 
 -- Example special workspace (scratchpad)
