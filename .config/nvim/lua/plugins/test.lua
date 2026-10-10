@@ -1,11 +1,30 @@
 return {
     {
+        "rcasia/neotest-java",
+        ft = "java",
+        dependencies = {
+            "mfussenegger/nvim-dap",
+        },
+    },
+    {
         "nvim-neotest/neotest",
         dependencies = {
             "nvim-neotest/nvim-nio",
             "nvim-lua/plenary.nvim",
             "nvim-treesitter/nvim-treesitter",
         },
+        config = function()
+            require("neotest").setup({
+                output_panel = {
+                    open = "botright split | resize 22",
+                },
+                adapters = {
+                    require("neotest-java")({
+                        -- Optional configuration here
+                    }),
+                },
+            })
+        end,
         keys = function()
             local neotest = require("neotest")
             local keys = {
@@ -13,6 +32,11 @@ return {
                     "<leader>tt",
                     function() neotest.run.run() end,
                     desc = "Run the nearest test"
+                },
+                {
+                    "<leader>td",
+                    function() neotest.run.run({strategy = "dap"}) end,
+                    desc = "Run the nearest test in debug"
                 },
                 {
                     "<leader>tf",
