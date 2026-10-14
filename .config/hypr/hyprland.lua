@@ -75,7 +75,7 @@ hl.env("HYPRCURSOR_SIZE", "24")
 hl.env("QT_QPA_PLATFORMTHEME", "qt6ct")
 hl.env("QT_AUTO_SCREEN_SCALE_FACTOR", 1)
 hl.env("BROWSER", browser)
-hl.env("TERMINAL", terminal .. "-e")
+hl.env("TERMINAL", terminal .. " -e")
 hl.env("SYS_MON", sys_mon)
 
 -----------------------
@@ -186,6 +186,9 @@ hl.config({
     misc = {
         force_default_wallpaper = -1,    -- Set to 0 or 1 to disable the anime mascot wallpapers
         disable_hyprland_logo   = false, -- If true disables the random hyprland logo / anime girl background. :(
+    },
+    xwayland = {
+        force_zero_scaling = true,
     },
 })
 
