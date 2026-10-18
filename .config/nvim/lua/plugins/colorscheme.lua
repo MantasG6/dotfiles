@@ -1,12 +1,14 @@
 return {
-  {
-    "folke/tokyonight.nvim",
-    lazy = false,
-    priority = 1000,
-    opts = { style = "night" },
-    config = function(_, opts)
-      require("tokyonight").setup(opts)
-      vim.cmd.colorscheme("tokyonight")
-    end
-  }
+    {
+        "olimorris/onedarkpro.nvim",
+        priority = 1000, -- Ensure it loads first
+        config = function()
+            require("onedarkpro").setup({
+                colors = {
+                    onedark = { bg = "#161a1d" },
+                }
+            })
+            vim.cmd("colorscheme onedark")
+        end
+    },
 }
