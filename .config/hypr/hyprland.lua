@@ -59,7 +59,7 @@ local shutdown = terminal .. " -e ~/.config/hypr/scripts/shutdown.sh"
 hl.on("hyprland.start", function ()
     hl.exec_cmd("systemctl --user start hyprpolkitagent")
     hl.exec_cmd("hyprpaper")
-    hl.exec_cmd("hyprsunset")
+    hl.exec_cmd("gammastep")
     hl.exec_cmd("waybar")
 end)
 
