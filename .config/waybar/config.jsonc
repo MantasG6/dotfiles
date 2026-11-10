@@ -22,7 +22,7 @@
         "network",
         "bluetooth",
         "backlight",
-        "custom/battery"
+        "battery"
     ],
     // Left modules
     "custom/archicon": {
@@ -122,10 +122,4 @@
             "charging": ["󱊤", "󱊥", "󱊦"]
         },
     },
-    "custom/battery": {
-        "exec": "cat /sys/class/power_supply/BAT0/capacity",
-        "interval": 30,
-        "format": "{text}% 󱊣",
-        "tooltip": false,
-    }
 }
