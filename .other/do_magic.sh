@@ -44,7 +44,7 @@ sudo pacman -S --needed --noconfirm imagemagick
 sudo pacman -S --needed --noconfirm hyprlock
 sudo pacman -S --needed --noconfirm spotify-launcher
 sudo pacman -S --needed --noconfirm gimp
-sudo pacman -S --needed --noconfirm hyprsunset
+sudo pacman -S --needed --noconfirm gammastep
 sudo pacman -S --needed --noconfirm firefox
 paru -S --needed --noconfirm google-chrome
 # Set chrome defaults to firefox instead
