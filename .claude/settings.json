@@ -1,0 +1,6 @@
+{
+  "theme": "auto",
+  "enabledPlugins": {
+    "mattpocock-skills@claude-plugins-official": true
+  }
+}
