@@ -91,6 +91,7 @@ paru -S --needed --noconfirm jmtpfs # to connect android phone through USB
 sudo pacman -S --needed --noconfirm kdenlive # video editor
 curl -fsSL https://claude.ai/install.sh | bash
 # Link configurations
+mkdir -p ~/.claude # keep a real dir so stow links only the tracked files
 stow -t ~/ -d ~/dotfiles .
 stow -t ~/.config -d ~/dotfiles .config
 mkdir ~/.local/share/icons 
